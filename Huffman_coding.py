@@ -19,7 +19,7 @@ class Huffman_tree:
         for k,v in sorted(unique.items(),key=lambda item:item[1]):
             self.insert(k,v)
             print(k,v, end =" ")
-
+        del unique
 
     def insert(self,key,val):
         if self.root==None:
@@ -56,9 +56,6 @@ def generate_code(root,key,code=""):
         else:
             generate_code(root.left,key,code+str(0))
             generate_code(root.right,key,code+str(1))
-
-
-
 
 
 s=input()
